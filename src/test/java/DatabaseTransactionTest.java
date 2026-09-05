@@ -1,4 +1,4 @@
-import org.example.Database;
+import org.example.database.Database;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -44,19 +44,13 @@ public class DatabaseTransactionTest {
     @Test
     void nestedRollbackOnlyRollsBackLastTransaction() {
         database.set("a", "10");
-
         database.begin();
         database.set("a", "20");
-
         database.begin();
         database.set("a", "30");
-
         database.rollback();
-
         assertEquals("20", database.get("a"));
-
         database.rollback();
-
         assertEquals("10", database.get("a"));
     }
 
@@ -64,7 +58,6 @@ public class DatabaseTransactionTest {
     void commitTransaction() {
         database.begin();
         database.set("a", "20");
-
         database.begin();
         database.set("a", "30");
 
@@ -82,10 +75,8 @@ public class DatabaseTransactionTest {
     void rollbackAfterCommitTransaction() {
         database.begin();
         database.set("a", "20");
-
         database.begin();
         database.set("a", "30");
-
         database.commit();
 
         assertFalse(database.rollback());

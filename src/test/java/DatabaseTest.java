@@ -1,4 +1,4 @@
-import org.example.Database;
+import org.example.database.Database;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

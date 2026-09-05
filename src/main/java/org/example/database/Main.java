@@ -1,4 +1,4 @@
-package org.example;
+package org.example.database;
 
 import java.util.Scanner;
 
@@ -75,7 +75,6 @@ public class Main {
                 return true;
             }
         }
-
     }
 
     private static boolean isValid(String command, int length) {

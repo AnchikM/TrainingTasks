@@ -1,4 +1,4 @@
-package org.example;
+package org.example.database;
 
 import java.util.*;
 
@@ -83,10 +83,8 @@ public class Database {
                 data.remove(key);
             }
         }
-
         return true;
     }
-
     public boolean commit() {
         if (transactions.isEmpty()) return false;
 
