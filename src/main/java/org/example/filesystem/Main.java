@@ -98,3 +98,35 @@ public class Main {
         System.out.println("EXIT");
     }
 }
+//> MKDIR /documents
+//true
+//
+//> MKDIR /documents/work
+//true
+//
+//> CREATE /documents/work/report.txt Hello World!
+//true
+//
+//> READ /documents/work/report.txt
+//Hello World!
+//
+//> LIST /documents/work
+//[report.txt]
+//
+//> DELETE /documents/work
+//false
+//
+//> DELETE /documents/work/report.txt
+//true
+//
+//> DELETE /documents/work
+//true
+//
+//> LIST /documents
+//[]
+//
+//> READ /documents/no.txt
+//ERROR: File does not exist: /documents/no.txt
+//
+//> EXIT
+//File system closed.
